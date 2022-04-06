@@ -6357,9 +6357,9 @@
     "postcss" "^7.0.2"
     "postcss-values-parser" "^2.0.0"
 
-"postcss-color-rebeccared@^4.0.1":
+"postcss-color-rebeccapurple@^4.0.1":
   "integrity" "sha512-aAe3OhkS6qJXBbqzvZth2Au4V3KieR5sRQ4ptb2b2O8wgvB3SJBsdG+jsn2BZbbwekDG8nTfcCNKcSfe/lEy8g=="
-  "resolved" "https://registry.npmjs.org/postcss-color-rebeccared/-/postcss-color-rebeccared-4.0.1.tgz"
+  "resolved" "https://registry.npmjs.org/postcss-color-rebeccapurple/-/postcss-color-rebeccapurple-4.0.1.tgz"
   "version" "4.0.1"
   dependencies:
     "postcss" "^7.0.2"
@@ -6876,7 +6876,7 @@
     "postcss-color-gray" "^5.0.0"
     "postcss-color-hex-alpha" "^5.0.3"
     "postcss-color-mod-function" "^3.0.3"
-    "postcss-color-rebeccared" "^4.0.1"
+    "postcss-color-rebeccapurple" "^4.0.1"
     "postcss-custom-media" "^7.0.8"
     "postcss-custom-properties" "^8.0.11"
     "postcss-custom-selectors" "^5.1.2"

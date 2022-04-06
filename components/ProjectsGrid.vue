@@ -187,10 +187,8 @@ export default {
       }
       return this.projects;
     },
-    computed: {
-      project() {
-        return this.$store.getters.getProjectById(this.$route.params.id);
-      },
+    project() {
+      return this.$store.getters.getProjectById(this.$route.params.id);
     },
   },
   methods: {
