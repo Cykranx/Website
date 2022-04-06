@@ -6,7 +6,7 @@
     <!-- About counter -->
     <AboutCounter />
 
-    <!-- About clients -->
+    <!-- About client test -->
     <AboutClients class="container mx-auto" />
   </div>
 </template>
