@@ -5,7 +5,7 @@ export const state = () => ({
   aboutMe: [
     {
       id: uuidv4(),
-      bio: "15-jährige Anfänger Programmierer. Ich interessiere mich für Software Entwicklung in programmiere, sprachen wie: Python, Javascript, und C Sharp. Ich bin noch an das Lernen von Programier sprachen und deshalb hab ich bis jetzt wenige Projekt fertigstellen.",
+      bio: "16-jährige Anfänger Programmierer. Ich interessiere mich für das Software Entwicklung in programmiere sprachen wie: Python, Javascript, und C Sharp. Ich bin noch an das Lernen von Programier sprachen und deshalb hab ich bis jetzt wenige Projekt fertigstellen.",
     },
     {
       id: uuidv4(),

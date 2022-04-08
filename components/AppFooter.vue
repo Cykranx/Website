@@ -53,7 +53,7 @@
         <div class="text-lg text-primary-dark dark:text-ternary-light">
           &copy; {{ copyrightDate }}.
           <a
-            href="https://github.com/Cykranx"
+            href="https://github.com/Cykranx/Website"
             target="__blank"
             class="
               text-secondary-dark

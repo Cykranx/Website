@@ -12,9 +12,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-light": "#822323",
-        "secondary-light": "#822323",
-        "ternary-light": "#822323",
+        "primary-light": "#FF0000",
+        "secondary-light": "#591313",
+        "ternary-light": "#FF0000",
 
         "primary-dark": "#000000",
         "secondary-dark": "#000000",
