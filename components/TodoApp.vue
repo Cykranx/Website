@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-white dark:text-white">
     <div class="container my-5">
       <h2 class="text-center">VUE 3 ToDo App With Rest Api</h2>
       <div class="row d-flex justify-content-center">
@@ -11,7 +11,7 @@
                 <input
                   v-model="todo"
                   type="text"
-                  class="form-control"
+                  class="form-control text-black"
                   name="todo"
                   id="todo"
                   placeholder="Enter New Todo"
@@ -65,7 +65,7 @@
               <div class="col-2 d-flex justify-content-center">
                 <span
                   class="form-check form-switch"
-                  @click="done_todo(todo)"
+                  @click="done_todo(todo,index)"
                   style="margin-left: 20px"
                 >
                   <input
@@ -81,7 +81,7 @@
               <div class="col-2 d-flex justify-content-center">
                 <button
                   class="btn btn-danger btn-sm"
-                  @click="delete_todo(todo.id)"
+                  @click="delete_todo(index)"
                 >
                   Delete
                 </button>
@@ -110,18 +110,19 @@ export default {
     };
   },
   mounted() {
+    //localStorage.setItem("todos", "[]")
     this.getTodos();
   },
   methods: {
-    async getTodos() {
+    getTodos() {
       try {
-        const response = await this.$axios.get("/todos");
-        this.ToDos = response.data;
+        //const response = await this.$axios.get("/todos");
+        this.ToDos = JSON.parse(localStorage.getItem("todos"));
       } catch (error) {
         this.errors.push(error);
       }
     },
-    async save() {
+    save() {
       if (this.input_errors.length > 0 || this.todo == "") {
         if (this.todo == "" && this.input_errors.length == 0)
           this.input_errors.push("ToDo field cannot be left blank");
@@ -131,28 +132,35 @@ export default {
       } else {
         try {
           this.newTodo.todo = this.todo;
-          const response = await this.$axios.post("/todos", this.newTodo);
-          this.responseData = response.data;
+          this.ToDos.push(this.newTodo)
+          localStorage.setItem("todos", JSON.stringify(this.ToDos));
+          this.getTodos();
+          //const response = await this.$axios.post("/todos", this.newTodo);
+          //this.responseData = response.data;
         } catch (error) {
           this.errors.push(error);
         }
-        this.getTodos();
+        //this.getTodos();
         //this.$notify("Added Succesfully");
         this.todo = "";
       }
     },
     async delete_todo(index) {
-      try {
+      //console.log(index)
+      this.ToDos.splice(index, 1);
+      localStorage.setItem("todos", JSON.stringify(this.ToDos));
+      this.getTodos();
+      /*try {
         const response = await this.$axios.delete("/todos/" + index);
         this.responseData = response.data;
       } catch (error) {
         this.errors.push(error);
-      }
+      }*/
       this.getTodos();
       //this.$notify("Deleted Succesfully");
     },
-    async done_todo(todo) {
-      try {
+    async done_todo(todo,index) {
+      /*try {
         const response = await this.$axios.put("/todos/" + todo.id, {
           todo: todo.todo,
           done: !todo.done,
@@ -160,7 +168,15 @@ export default {
         this.responseData = response.data;
       } catch (error) {
         this.errors.push(error);
+      }*/
+      console.log(todo)
+      console.log(index)
+      let modifiedTodo = {
+        todo: todo.todo,
+        done: !todo.done
       }
+      this.ToDos[index] = modifiedTodo;
+      localStorage.setItem("todos", JSON.stringify(this.ToDos))
       this.getTodos();
       //this.$notify("Updated Succesfully");
     },
