@@ -110,6 +110,7 @@ export default {
     };
   },
   mounted() {
+    !localStorage.getItem("todos") ? localStorage.setItem("todos","[]") : ""; 
     //localStorage.setItem("todos", "[]")
     this.getTodos();
   },
